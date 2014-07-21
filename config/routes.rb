@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home' => 'home#welcome' #take the  welcome.html.erb file from the home folder
+  get 'hi' => 'home#hi' #take the hi.html.erb from home folder
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
