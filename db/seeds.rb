@@ -9,5 +9,10 @@ Location.create name: 'Home' , city: 'masion' , rate: 10
 Location.create name: 'Home2' , city: 'masion2' , rate: 10
 Location.create name: 'Home3' , city: 'masion3' , rate: 10
 Location.create name: 'Home4' , city: 'masion4' , rate: 10
+Location.create name: 'Home5' , city: 'masion5' , rate: 10
+Location.create name: 'Home6' , city: 'masion6' , rate: 10
+Location.create name: 'Home7' , city: 'masion7' , rate: 10
+Location.create name: 'Home8' , city: 'masion8' , rate: 10
+
 
 
