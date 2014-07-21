@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 20140721104444) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
+    t.string   "surname"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "city"
+    t.string   "street"
     t.integer  "rate"
   end
 
