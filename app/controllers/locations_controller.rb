@@ -7,6 +7,8 @@ class LocationsController < ApplicationController
 
 	def show
 		@locations = Location.find(params[:id])
+	rescue ActiveRecord::RecordNotFound
+		render 'not_found'
 	end
 end
 
