@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base #ORM object relational mapping
+	has_many :visits
 	def self.iron_findbyname(value)
 		Location.where(name: value)
 	end

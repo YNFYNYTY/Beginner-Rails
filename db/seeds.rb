@@ -17,3 +17,5 @@ Location.create name: 'Home8' , city: 'masion8' , rate: 10
 
 Visit.create location_id: 1, user_name: 'Ben', from_date: '2014-07-22 08:27:49.378076', to_date: '2014-07-22 08:27:49.378012'
 Visit.create location_id: 2 , user_name: 'Benny' , from_date: '2014-07-22 08:27:49.3712076', to_date: '2014-07-22 08:27:49.1278012'
+Visit.create location_id: 1, user_name: 'Patxi', from_date: '2014-07-22 08:27:49.378076', to_date: '2014-07-22 08:27:49.338012'
+Visit.create location_id: 1 , user_name: 'Juan' , from_date: '2014-07-22 08:27:49.3712076', to_date: '2014-07-22 08:27:49.1278012'

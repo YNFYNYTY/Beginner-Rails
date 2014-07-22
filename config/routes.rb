@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'hi' => 'home#hi' #take the hi.html.erb from home folder
   get 'locations' => 'locations#index' #take the index.html.erb file from the locations folder
   get 'locations/:id' => 'locations#show' #take the show.html.erb filr from the locations folder
+  get  'locations/:locations_id/visits' => 'visits#index'
+  get  'locations/:locations_id/visits/:id' => 'visits#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
