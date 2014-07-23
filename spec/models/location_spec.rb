@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Location, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"
-  it 'counts visits by months and locations have to return 1 when the location have one visit' do 
+  xit 'counts visits by months and locations have to return 1 when the location have one visit' do 
   	location = Location.create name: 'Home' , city: 'Bilbao'
   	visit_params = {
   		location_id: location.id,
@@ -14,7 +14,7 @@ RSpec.describe Location, :type => :model do
   	visit = Visit.create(visit_params)
   	expect(location.total_visits_in_month_of_year(7, 2014)).to eq(1)
   end
-  it 'counts visits by months and locations have to return 0 when the location have zero visit' do 
+  xit 'counts visits by months and locations have to return 0 when the location have zero visit' do 
   	location = Location.create name: 'Home' , city: 'Bilbao'
   	visit_params = {
   		location_id: location.id,
@@ -26,6 +26,20 @@ RSpec.describe Location, :type => :model do
   	visit = Visit.create(visit_params)
   	expect(location.total_visits_in_month_of_year(6, 2014)).to eq(0)
   end
+
+  xit 'return false when a visit has not from_date presence' do
+    v = Visit.create location_id: 1, user_name: 'Ben', from_date: '2014-07-22 08:27:49.378076', to_date: '2014-07-22 08:27:49.378012'
+    # visit_params = {
+    #   location_id: location.id,
+    #   user_name: 'Ben',
+    #   from_date: '2014-07-22 08:27:49.378076',
+    #   to_date: '2014-07-22 08:27:49.378012'
+    # }
+
+    visit = Visit.create(visit_params)
+    expect(l.from_date).to eq()
+  end
+
 
 end
 

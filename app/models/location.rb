@@ -1,5 +1,13 @@
 class Location < ActiveRecord::Base #ORM object relational mapping
 	has_many :visits
+	validates :name, presence: true
+	validates :city, presence:  true
+	validates :name, length: { maximum: 15 }
+
+	validates :name, uniqueness: true
+	validates_format_of :username, :with => /[a-z]/
+	# validates :attribute, length: {maximum: 10}
+	# validates :attribute, numecarity:
 	def self.iron_findbyname(value)
 		Location.where(name: value)
 	end
@@ -25,6 +33,8 @@ class Location < ActiveRecord::Base #ORM object relational mapping
 
 		count
 	end
+
+
 
 end
 
