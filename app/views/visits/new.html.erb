@@ -1,5 +1,10 @@
 
 <h1>FUCKING UGLY BACKEND</h1>
+<hr>
+<h3>
+	<%= @visits  %>
+</h3>
+<hr>
 <%= form_for [ @location, @visit ] do |f| %>
 <%= f.label :user_name %>
 <%= f.text_field :user_name %>
