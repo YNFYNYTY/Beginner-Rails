@@ -1,4 +1,3 @@
-require 'pry'
 class Location < ActiveRecord::Base #ORM object relational mapping
 	has_many :visits
 	def self.iron_findbyname(value)
@@ -19,7 +18,6 @@ class Location < ActiveRecord::Base #ORM object relational mapping
 			date = visit.from_date.to_date
 			month_visit=date.strftime("%m").to_i
 			year_visit=date.strftime("%Y").to_i
-			binding.pry
 			if month_visit == month and year_visit==year
 				count+=1
 			end
