@@ -5,6 +5,18 @@
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("new").toggle();
+  });
+});
+
+</script>
+
 <%= flash_message %>
 
 <h2><%= @location.name %>
@@ -13,16 +25,23 @@
  		<% @visits.each do |visit| %>
  	<li>
  		<%= visit.user_name %>
- 		<%= link_to 'KILL', location_visit_path(@location, visit), :method => :delete %></strong>
- 		<%= link_to 'EDIT', edit_location_visit_path(@location, visit) %></strong>
  		<br/>From: <%= visit.from_date %>
  		<br/>To: <%= visit.to_date %>
  	</li>
+ 	 	<strong><%= link_to 'KILL', location_visit_path(@location.id, visit.id), :method => 'delete', confirm: "Are you sure?" %></strong>
+ 		<strong><%= link_to 'EDIT', edit_location_visit_path(@location.id, visit.id) %></strong>
+
 	 <% end %>
 	</ul>
-<%= link_to 'NEW VISIT', new_location_visit_path(@location) %></strong>
 
 
+
+<% if @location.name.present? %>
+ <%= link_to @location.name, location_visits_path(@location) %>
+ <%= @location.city %>
+ <% else %>
+ <%= link_to @location.city, location_visits_path(@location) %>
+ <% end %>
 
 
 

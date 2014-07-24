@@ -2,12 +2,10 @@
 
 <h1>Locations</h1>
 	<ul>
- 		<% @locations.each do |l| %>
  		  <li>
- 			<% if l.name.present? %>
- 					<%= l.name %>
+ 			<% if @location.name.present? %>
+ 					<%= @location.name %>
  			<% end %>
- 					<%= l.city %>
+ 					<%= @location.city %>
  		  </li>
- 		<% end %>
-	</ul>
+ 	</ul>

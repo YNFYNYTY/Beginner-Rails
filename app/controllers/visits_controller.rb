@@ -3,7 +3,9 @@ class VisitsController < ApplicationController
 	def index
 		@location = Location.find(params[:location_id])
 		@visits = @location.visits
-		flash[:message] = "HEll"
+		# @visit = @location.visits.new
+		flash[:message] = "HELLO"
+		# render plain: params.inspect
 	end
 	def new
 		@location = Location.find(params[:location_id])
@@ -37,9 +39,10 @@ class VisitsController < ApplicationController
 	end
 
 	def destroy
-		location = Location.find(params[:location_id])
-		@visit = location.visits.find(params[:id]).destroy
-		redirect_to action:  'index'
+		@location = Location.find(params[:location_id])
+		visit = @location.visits.find(params[:id]).destroy
+		# redirect_to action:  'index'
+		render plain params.inspect
 	end
 
 

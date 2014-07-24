@@ -20,7 +20,7 @@ class Location < ActiveRecord::Base #ORM object relational mapping
 		Location.limit(value).order("created_at DESC")
 	end
 	def total_visits_in_month_of_year(month , year)
-		visits = self.visits
+		# visits = self.visits
 		count=0
 		visits.each do |visit|
 			date = visit.from_date.to_date
