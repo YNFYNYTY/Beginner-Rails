@@ -1,8 +1,13 @@
-<h1>Locations</h1>
 <ul>
-	<% @locations.each do |location| %>
-	<li><%= location.name + location.city %></li>
-	<% end %>
-</ul>
 
-
+<h1>Locations</h1>
+	<ul>
+ 		<% @locations.each do |l| %>
+ 		  <li>
+ 			<% if l.name.present? %>
+ 					<%= l.name %>
+ 			<% end %>
+ 					<%= l.city %>
+ 		  </li>
+ 		<% end %>
+	</ul>

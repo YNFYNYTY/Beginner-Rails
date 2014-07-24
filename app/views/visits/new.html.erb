@@ -1,17 +1,23 @@
 
 <h1>FUCKING UGLY BACKEND</h1>
 <hr>
-<h3>
-	<%= @visits  %>
-</h3>
-<hr>
-<%= form_for [ @location, @visit ] do |f| %>
-<%= f.label :user_name %>
-<%= f.text_field :user_name %>
-<br/>
-<%= f.datetime_select(:from_date, default: Time.now + 1.days) %>
-<br/>
-<%= f.datetime_select(:to_date, default: Time.now + 1.days) %>
-<br/>
-	<%= f.submit "Save" %>
-<% end %>
+
+<% @location.each do |location| %>
+	<ul>
+  		<li><a href=“<%= location_visits_path(location) %>”>
+ 			<%= location.name %>
+  		</a></li>
+  	</ul>
+  	<% end %>
+
+
+ <% if location.name.present? %>
+ 	<%= link_to location.name, location_visits_path(location) %>
+ 	<%= location.city %>
+ <% else %>
+ 	<%= link_to location.city, location_visits_path(location) %>
+ <% end %>
+
+
+
+

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   get 'home' => 'home#welcome' #take the  welcome.html.erb file from the home folder
-  get 'hi' => 'home#hi' #take the hi.html.erb from home folder
+  #get 'hi' => 'home#hi' #take the hi.html.erb from home folder
   # get 'locations' => 'locations#index' #take the index.html.erb file from the locations folder
   # get 'locations/:id' => 'locations#show' #take the show.html.erb filr from the locations folder
-  # get  'locations/:locations_id/visits' => 'visits#index'
-  # get  'locations/:locations_id/visits/:id' => 'visits#show'
-  # get  'locations/:locations_id/visits/new' => 'visits#new' #take  the  new.html.erb file in the visits folder
+   # get  'locations/:locations_id/visits' => 'visits#index'
+   # get  'locations/:locations_id/visits/:id' => 'visits#show'
+   # get  'locations/:locations_id/visits/new' => 'visits#new'
+   # get  'locations/:locations_id/visits/edit' => 'visits#edit'
   root 'home#welcome'
   resources :locations do
     resources :visits

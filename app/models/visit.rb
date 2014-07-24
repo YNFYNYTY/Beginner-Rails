@@ -15,7 +15,7 @@ class Visit < ActiveRecord::Base
 # end
 
 def from_date_is_before_to_date
- 	if from_date.to_i < to_date.to_i
+ 	if from_date.to_i > to_date.to_i
 	 	errors.add(:from_date, "can't be from_date.to_i > to_date.to_i")
 	end
 end
